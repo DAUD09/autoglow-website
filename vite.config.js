@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import { resolve } from 'path'
 
 export default defineConfig({
+  base: '/autoglow-website/',
   root: '.',
 
   // ── Expose to local network so you can test on your phone ──────────

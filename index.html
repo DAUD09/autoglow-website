@@ -9,6 +9,7 @@
   <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://images.unsplash.com data:; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com; connect-src https://formspree.io; script-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action https://formspree.io;" />
   <link rel="icon" href="images/logo.png" type="image/x-icon" />
   <link rel="stylesheet" href="/src/style.css" />
 </head>
@@ -20,7 +21,7 @@
     <nav class="flex items-center justify-between h-16">
       <a href="index.html" class="flex items-center gap-3 group">
         <img id="site-logo" src="images/logo.png" alt="Autoglow" class="h-11 w-auto object-contain"
-          onerror="this.style.display='none'" />
+          data-img-fallback-hide />
         <span class="leading-tight">
         <span class="block font-display font-bold text-white text-sm leading-none">Autoglow</span>
         <span class="block text-[10px] text-white/50 tracking-wide">Cleaning Services Ltd</span>
@@ -119,7 +120,7 @@
         <div class="relative rounded-3xl overflow-hidden shadow-2xl" style="height:360px;">
           <img src="images/hero.jpg" alt="Autoglow professional cleaning"
                class="w-full h-full object-cover"
-               onerror="this.parentElement.classList.add('hero-img-fallback');this.style.display='none'" />
+               data-img-fallback-hero />
           <!-- Gradient overlay -->
           <div class="absolute inset-0" style="background:linear-gradient(to bottom, transparent 50%, rgba(9,30,53,0.6) 100%);"></div>
           <!-- Floating badge -->
@@ -536,7 +537,7 @@
       <div class="md:col-span-2">
         <div class="flex items-center gap-3 mb-4">
           <img src="images/logo.png" alt="Autoglow" class="h-10 w-auto object-contain"
-               onerror="this.parentElement.innerHTML='<span class=\'w-9 h-9 rounded-xl flex items-center justify-center font-display font-black text-sm text-white\' style=\'background:#03BCF1;\'>AG</span><span class=\'font-display font-bold text-white ml-2\'>Autoglow</span>'" />
+               data-footer-logo-full />
         </div>
         <p class="text-sm leading-relaxed max-w-xs" style="color:rgba(255,255,255,0.5);">Spotless Spaces Delivered. Professional cleaning and facility maintenance across Malawi.</p>
         <div class="mt-5 space-y-1 text-sm" style="color:rgba(255,255,255,0.4);">

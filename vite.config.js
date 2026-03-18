@@ -5,15 +5,6 @@ export default defineConfig({
   base: '/autoglow-website/',
   root: '.',
 
-  // ── Expose to local network so you can test on your phone ──────────
-  // Run: npm run dev
-  // Then open http://<YOUR-PC-IP>:5173 on your phone (same WiFi)
-  server: {
-    host: true,       // binds to 0.0.0.0 — exposes to LAN
-    port: 5173,
-    open: false,
-  },
-
   // ── Build config ───────────────────────────────────────────────────
   build: {
     outDir: 'dist',

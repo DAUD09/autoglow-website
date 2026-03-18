@@ -8,10 +8,11 @@
   <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://images.unsplash.com data:; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com; connect-src https://formspree.io; script-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action https://formspree.io;" />
   <meta name="description" content="Get in touch with Autoglow Cleaning Services Limited. Request a quote, ask a question, or book a site visit. Blantyre, Malawi." />
   <link rel="icon" href="images/logo.png" />
-  <script type="module" crossorigin src="/autoglow-website/assets/main-hblTw4MP.js"></script>
-  <link rel="stylesheet" crossorigin href="/autoglow-website/assets/main-Bs1UmvcA.css">
+  <script type="module" crossorigin src="/autoglow-website/assets/main-Bera2Ovw.js"></script>
+  <link rel="stylesheet" crossorigin href="/autoglow-website/assets/main-HCFYlITa.css">
 </head>
 <body class="bg-white text-gray-700">
 
@@ -21,7 +22,7 @@
     <nav class="flex items-center justify-between h-16">
       <a href="index.html" class="flex items-center">
         <img id="site-logo" src="images/logo.png" alt="Autoglow" class="h-11 w-auto object-contain"
-             onerror="document.getElementById('logo-fallback').style.display='flex';this.style.display='none'" />
+             data-logo-img />
         <span id="logo-fallback" class="hidden items-center gap-2">
           <span class="w-9 h-9 rounded-xl flex items-center justify-center font-display font-black text-sm text-white" style="background:#03BCF1;">AG</span>
           <span class="leading-tight"><span class="block font-display font-bold text-white text-sm leading-none">Autoglow</span><span class="block text-[10px] text-white/50 tracking-wide">Cleaning Services Ltd</span></span>
@@ -144,11 +145,11 @@
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
               <label class="form-label">Full Name *</label>
-              <input type="text" id="name" class="form-input" placeholder="Your full name" required />
+              <input type="text" id="name" class="form-input" placeholder="Your full name" required minlength="2" maxlength="80" autocomplete="name" />
             </div>
             <div>
               <label class="form-label">Phone / WhatsApp *</label>
-              <input type="tel" id="phone" class="form-input" placeholder="+265 xxx xxx xxx" required />
+              <input type="tel" id="phone" class="form-input" placeholder="+265 xxx xxx xxx" required minlength="7" maxlength="20" pattern="[+\d][\d\s\-().]{6,}" autocomplete="tel" />
             </div>
             <div class="sm:col-span-2">
               <label class="form-label">Email Address</label>

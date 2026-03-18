@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+
+@layer base {
+  html  { scroll-behavior: smooth; }
+  body  { @apply font-sans text-gray-700 bg-white antialiased; }
+  h1,h2,h3,h4,h5 { @apply font-display; }
+}
+
+@layer components {
+  .container-xl { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+
+  /* ── Buttons ── */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 font-display font-semibold px-7 py-3 rounded-full
+           transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+    background: #03BCF1;
+    color: #fff;
+    box-shadow: 0 6px 24px rgba(3,188,241,0.35);
+  }
+  .btn-primary:hover { background: #02a8d9; transform: translateY(-1px); box-shadow: 0 10px 30px rgba(3,188,241,0.4); }
+  .btn-outline {
+    @apply inline-flex items-center gap-2 font-display font-semibold px-7 py-3 rounded-full
+           border-2 border-[#124E78] text-[#124E78] transition-all duration-200;
+  }
+  .btn-outline:hover { background: #124E78; color: #fff; }
+  .btn-outline-white {
+    @apply inline-flex items-center gap-2 font-display font-semibold px-7 py-3 rounded-full
+           border-2 border-white text-white transition-all duration-200;
+  }
+  .btn-outline-white:hover { background: #fff; color: #124E78; }
+  .btn-cyan-ghost {
+    @apply inline-flex items-center gap-2 font-display font-semibold px-6 py-2.5 rounded-full
+           border border-[#03BCF1] text-[#03BCF1] text-sm transition-all duration-200;
+  }
+  .btn-cyan-ghost:hover { background: #03BCF1; color: #fff; }
+
+  /* ── Typography ── */
+  .section-label { @apply text-sm font-semibold uppercase tracking-widest mb-3; color: #03BCF1; }
+  .section-title { @apply text-3xl md:text-4xl lg:text-[2.75rem] font-display font-bold leading-tight; color: #124E78; }
+  .section-title-white { @apply text-3xl md:text-4xl lg:text-[2.75rem] font-display font-bold text-white leading-tight; }
+  .section-sub { @apply text-lg text-gray-500 mt-4 leading-relaxed; }
+  .section-sub-white { @apply text-lg text-white/70 mt-4 leading-relaxed; }
+
+  /* ── Nav (dark bg) ── */
+  .nav-link { @apply text-white/75 hover:text-white font-medium text-sm px-3 py-1.5 rounded-lg hover:bg-white/10 transition-colors duration-150; }
+  .nav-link-active { @apply text-white font-semibold; }
+
+  /* ── Badge ── */
+  .badge { @apply inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-1.5 rounded-full; background: #DCF8FE; color: #124E78; }
+
+  /* ── Service card (glassmorphism) ── */
+  .svc-card { @apply relative rounded-3xl overflow-hidden cursor-default; height: 300px; }
+  .svc-card img { @apply w-full h-full object-cover transition-transform duration-700; }
+  .svc-card:hover img { transform: scale(1.10); }
+  .svc-card-chip {
+    @apply absolute top-4 left-4 text-white text-[11px] font-semibold px-3 py-1.5 rounded-full;
+    border: 1px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .svc-card-glass {
+    @apply absolute bottom-0 left-0 right-0 p-5;
+    background: rgba(3,188,241,0.10);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+  .svc-card-btn {
+    @apply inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2 rounded-full
+           text-white border border-white/30 mt-3 transition-all duration-200;
+    background: rgba(3,188,241,0.25);
+    backdrop-filter: blur(8px);
+    pointer-events: none;
+  }
+
+  /* ── Value cards (PayChangu style) ── */
+  .val-card { @apply rounded-3xl p-8 flex flex-col gap-5; }
+  .val-card-chip { @apply inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold w-fit; }
+
+  /* ── Steps ── */
+  .step-num { @apply w-12 h-12 rounded-full text-white font-bold font-display text-xl flex items-center justify-center flex-shrink-0; background: #03BCF1; box-shadow: 0 6px 20px rgba(3,188,241,0.35); }
+
+  /* ── Standard card ── */
+  .card { @apply bg-white rounded-2xl p-6 hover:shadow-lg transition-shadow duration-200; box-shadow: 0 4px 20px rgba(18,78,120,0.08); border: 1px solid rgba(18,78,120,0.07); }
+
+  /* ── Form ── */
+  .form-input { @apply w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 bg-white focus:outline-none focus:border-transparent placeholder-gray-400 transition; }
+  .form-input:focus { box-shadow: 0 0 0 2px rgba(3,188,241,0.35); }
+  .form-label { @apply block text-sm font-semibold text-gray-700 mb-1.5; }
+
+  /* ── FAQ ── */
+  .faq-item    { @apply rounded-2xl bg-white overflow-hidden; border: 1px solid rgba(18,78,120,0.1); }
+  .faq-trigger { @apply w-full flex items-center justify-between px-6 py-4 text-left; }
+}
+
+/* ── Globals ── */
+#navbar.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.35); }
+#site-logo { max-height: 2.75rem; }
+
+.hero-img-fallback { min-height: 480px; background: linear-gradient(135deg,#124E78,#03BCF1); border-radius: 1.5rem; display:flex; align-items:center; justify-content:center; }
+.hero-img-fallback::after { content:"Add hero photo at public/images/hero.jpg"; color:rgba(255,255,255,0.6); font-size:.75rem; text-align:center; padding:1rem; }
+
+/* Marquee */
+@keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+.ticker-inner { animation: ticker 32s linear infinite; white-space: nowrap; }
+.ticker-inner:hover { animation-play-state: paused; }
+
+/* Float */
+@keyframes floatup { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+.float { animation: floatup 4s ease-in-out infinite; }
+
+/* Pricing table */
+.ptable { @apply w-full text-sm; }
+.ptable thead th { padding: .875rem 1.25rem; text-align: left; font-weight: 600; font-family: 'Poppins', sans-serif; font-size: .8rem; letter-spacing: .03em; }
+.ptable td { padding: .75rem 1.25rem; }
+.ptable tr:nth-child(even) td { background: rgba(220,248,254,0.45); }
+.ptable tr:nth-child(odd) td { background: #fff; }
+.ptable .td-price { text-align: right; font-weight: 600; color: #124E78; white-space: nowrap; }
+
+/* Star */
+.star { display:inline-block; color:#f59e0b; }
